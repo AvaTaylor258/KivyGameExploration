@@ -1,4 +1,5 @@
-# !
+# Ava Taylor
+#:include pipe.kv
 
 FloatLayout:
     Background:
@@ -16,3 +17,21 @@ FloatLayout:
                 size: self.width, 96
                 pos: self.pos[0], self.pos[1]
                 texture: self.floor_texture
+    Pipe:
+        size_hint: None, None
+        size: 64, root.height - 96
+        pos: 400, 96
+        pipe_center: 450
+
+    Pipe:
+        size_hint: None, None
+        size: 64, root.height - 96
+        pos: 200, 96
+        pipe_center: 250
+
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, .3
+            Rectangle:
+                size: self.size
+                pos: self.pos

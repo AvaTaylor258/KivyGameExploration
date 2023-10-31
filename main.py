@@ -1,11 +1,13 @@
-# !
+# Ava Taylor
 
 from kivy.app import App
 from kivy.properties import ObjectProperty
 from kivy.uix.widget import Widget
 from kivy.uix.image import Image
 from kivy.core.window import Window
+from kivy.clock import Clock
 
+from pipe import Pipe
 
 class Background(Widget):
     cloud_texture = ObjectProperty(None)
@@ -35,7 +37,6 @@ class Background(Widget):
         texture = self.property("floor_texture")
         texture.dispatch(self)
 
-from kivy.clock import Clock
 class GameExplorationApp(App):
     def on_start(self):
         Clock.schedule_interval(self.root.ids.background.scroll_textures, 1/60)
